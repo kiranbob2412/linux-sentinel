@@ -1,0 +1,15 @@
+[Unit]
+Description=LinuxOps Sentinel read-only host audit
+Documentation=https://github.com/your-username/linuxops-sentinel
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/linuxops-sentinel scan --format json --output /var/log/linuxops-sentinel/report.json --exit-code never
+User=root
+Group=root
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/log/linuxops-sentinel

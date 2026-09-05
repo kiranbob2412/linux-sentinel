@@ -1,0 +1,7 @@
+region         = "ap-south-1"
+ami_id         = "ami-REPLACE_WITH_A_REGION_SPECIFIC_AMI"
+subnet_id      = "subnet-REPLACE_WITH_A_DEFAULT_VPC_SUBNET"
+instance_type  = "t3.micro"
+key_name       = "REPLACE_WITH_YOUR_EC2_KEY_PAIR"
+ssh_cidr       = "198.51.100.10/32"
+repository_url = "https://github.com/your-username/linuxops-sentinel.git"

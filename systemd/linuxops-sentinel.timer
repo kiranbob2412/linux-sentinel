@@ -1,0 +1,10 @@
+[Unit]
+Description=Run LinuxOps Sentinel daily
+
+[Timer]
+OnCalendar=*-*-* 06:15:00
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target

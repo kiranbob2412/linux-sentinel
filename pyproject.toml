@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linuxops-sentinel"
+version = "1.1.0"
+description = "Read-only Linux health and security auditing CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "LinuxOps Sentinel contributors" }]
+keywords = ["linux", "devops", "security", "monitoring", "systemd"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Monitoring",
+]
+
+[project.scripts]
+linuxops-sentinel = "linuxops_sentinel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

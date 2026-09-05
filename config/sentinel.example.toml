@@ -1,0 +1,8 @@
+[thresholds]
+disk_warning_percent = 80
+disk_critical_percent = 92
+memory_warning_percent = 85
+memory_critical_percent = 95
+load_warning_multiplier = 1.5
+load_critical_multiplier = 3.0
+uptime_warning_days = 90

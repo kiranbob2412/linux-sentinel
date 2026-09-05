@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -f "${SCRIPT_DIR}/../share/linuxops-sentinel/src/linuxops_sentinel/__main__.py" ]]; then
+  APP_HOME="${SCRIPT_DIR}/../share/linuxops-sentinel"
+else
+  APP_HOME="${SCRIPT_DIR}/.."
+fi
+export PYTHONPATH="${APP_HOME}/src${PYTHONPATH:+:${PYTHONPATH}}"
+exec python3 -m linuxops_sentinel "$@"

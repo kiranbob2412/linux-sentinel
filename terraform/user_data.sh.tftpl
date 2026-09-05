@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -y
+apt-get install -y git python3
+install -d -m 0755 /opt/linuxops-sentinel /var/log/linuxops-sentinel
+git clone --depth 1 "${repository_url}" /opt/linuxops-sentinel
+cd /opt/linuxops-sentinel
+PYTHONPATH=src python3 -m linuxops_sentinel scan \
+  --cloud \
+  --format json \
+  --output /var/log/linuxops-sentinel/first-boot.json
