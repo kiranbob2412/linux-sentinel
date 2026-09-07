@@ -202,7 +202,3 @@ boundaries. The project intentionally keeps collection separate from policy:
 collectors read the host, checks evaluate a snapshot, and reporters serialize
 the result. That makes the risk-sensitive logic testable without mutating a
 real machine.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
